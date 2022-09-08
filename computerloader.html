@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.content{
+				width: 500px;
+				height: 300px;
+				position: absolute;
+				left: 50%;
+				margin-left: -512px;
+				box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			}
+			/* Loader 1 */
+			.loader1{
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				height: 300px;
+				width: 500px;
+			}
+			.loader1 .stage{
+				height: 300px;
+				width: 500px;
+			}
+			.loader1 .monitor{
+				height: 300px;
+				width: 500px;
+				overflow:hidden;
+				background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(8,45,14,1)), color-stop(100%,rgba(4,20,7,1)));
+				background: -webkit-radial-gradient(center, ellipse cover, rgba(8,45,14,1) 0%,rgba(4,20,7,1) 100%);
+				background: radial-gradient(ellipse at center, rgba(8,45,14,1) 0%,rgba(4,20,7,1) 100%);
+				box-shadow: inset 0px 0px 5px black;
+				font-family:'Courier New';
+				font-size: 9pt;
+				color: yellowgreen;
+				padding: 5px;
+			}
+			.loader1 .monitor div{
+				width: 0px;
+				height: 0px;
+				overflow: hidden;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			
+			.loader1 #point{
+				background: yellowgreen;
+				width: 7px;
+				height: 15px;
+				float:left;
+				animation-name: pntr;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+			}
+			#row0{
+				animation-name: typeIt;
+				animation-duration: 2s;
+			}
+			#row1{
+				animation-name: typeIt;
+				animation-delay: 2s;
+				animation-duration: 2s;
+			}
+			#row2{
+				animation-name: typeIt;
+				animation-delay: 4s;
+				animation-duration: 5s;
+			}
+			#row3{
+				animation-name: typeIt;
+				animation-delay: 10s;
+				animation-duration: 1s;
+			}
+			#row4{
+				animation-name: typeIt;
+				animation-delay: 11s;
+				animation-duration: 2s;
+			}
+			#row5{
+				animation-name: typeIt;
+				animation-delay: 13s;
+				animation-duration: 2s;
+			}
+			#row6{
+				animation-name: typeIt;
+				animation-delay: 15s;
+				animation-duration: 1s;
+			}
+			#row7{
+				animation-name: typeIt;
+				animation-delay: 16s;
+				animation-duration: 5s;
+			}
+			#row8{
+				animation-name: typeIt;
+				animation-delay: 22s;
+				animation-duration: 1s;
+			}
+			#row9{
+				animation-name: typeIt;
+				animation-delay: 23s;
+				animation-duration: 1s;
+			}
+
+			@keyframes pntr{
+				0% { opacity:1; }
+				25% { opacity:0; }
+				50% { opacity:1; }
+				75% { opacity:0; }
+				100% { opacity:1; }
+			}
+			@keyframes typeIt{
+				0% { height: 18px; }
+				100% { width: 500px; height: 18px; }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="loader1">
+				<div class="stage">
+					<div class="monitor">
+						Data loading <br>
+						<div id="row0">Memory allocated #F83B2AC1</div>
+						<div id="row1">Decryption started xHRC Protocol</div>
+						<div id="row2">. . .</div>
+						<div id="row3">CRYPT ERROR #054</div>
+						<div id="row4">#meta-report-init</div>
+						<div id="row5">#report-data: #F83B2AC1 dcrypt break</div>
+						<div id="row6">#report-send</div>
+						<div id="row7">. . .</div>
+						<div id="row8">succeeded restart responsible</div>
+						<div id="row9">restart - press enter</div>
+						<div id="point"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(this).keydown(function(key){
+					if(key.which == 13){
+						location.reload();
+					}
+				/*	if(key.which >= 66 && key.which <= 90 || key.wich == 32){
+						$("#point").before(key.which);
+					} */
+				});
+			})
+		</script>
+	</body>
+</html>

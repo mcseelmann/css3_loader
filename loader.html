@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				font-size: 14pt;
+				color: #136aa3;
+				margin:0px;
+				position: absolute;
+				bottom: 0px;
+				width: 200px;
+				text-align: center;
+			}
+			.content{
+				width: 1024px;
+				height: 768px;
+				position: absolute;
+				left: 50%;
+				margin-left: -512px;
+				box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			}
+			/* Loader 1 */
+			.loader1{
+				position: absolute;
+				height: 160px;
+				width: 200px;
+			}
+			.loader1 .stage{
+				width: 90px;
+				height: 90px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left:-45px;
+				margin-top: -45px;
+			}
+			.loader1 .point{
+				width: 30px;
+				height: 30px;
+				-webkit-animation-name: load1;
+				-webkit-animation-duration: 4s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: load1;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes load1{
+				0% { background: #136aa3; margin-left:0px; margin-top:0px; }
+				25% { background: #58a2cf; margin-left:60px; margin-top:0px; }
+				50% { background: #8cd5f5; margin-left:60px; margin-top:60px; }
+				75% { background: #58a2cf; margin-left:0px; margin-top:60px; }
+				100% { background: #136aa3; margin-left: 0px; margin-top:0px; }
+			}
+			
+			/* Loader 2 */
+			.loader2{
+				position: absolute;
+				left: 210px;
+				top: 0px;
+				height: 160px;
+				width: 200px;
+			}
+			.loader2 .point{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -40px;
+				margin-top: -40px;
+				width: 80px;
+				height: 80px;
+				-webkit-animation-name: load2;
+				-webkit-animation-duration: 4s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: load2;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes load2{
+				0% { background: #136aa3; transform: rotate(45deg); }
+				25% { background: #58a2cf; transform: rotate(135deg); }
+				50% { background: #8cd5f5; transform: rotate(225deg); }
+				75% { background: #58a2cf; transform: rotate(315deg); }
+				100% { background: #136aa3; transform: rotate(45deg); }
+			}
+
+			/* Loader 3 */
+			.loader3{
+				position: absolute;
+				left: 420px;
+				top: 0px;
+				height: 160px;
+				width: 200px;
+			}
+			.loader3 .point{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -40px;
+				margin-top: -40px;
+				width: 80px;
+				height: 80px;
+				-webkit-animation-name: load3;
+				-webkit-animation-duration: 4s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: load3;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes load3{
+				0% { background: #136aa3; border-radius: 40px; }
+				20% { background: #58a2cf; border-radius: 10px 70px 10px 70px; }
+				40% { background: #8cd5f5; border-radius: 70px 10px 70px 10px; }
+				60% { background: #58a2cf; border-radius: 10px 70px 10px 70px; }
+				80% { background: #8cd5f5; border-radius: 70px 10px 70px 10px; }
+				100% { background: #136aa3; border-radius: 40px; }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="loader1">
+				<div class="stage"><div class="point"></div></div>
+				<h1>Artikel werden geladen.</h1>
+			</div>
+			<div class="loader2">
+				<div class="point"></div>
+				<h1>Artikel werden geladen.</h1>
+			</div>
+			<div class="loader3">
+				<div class="point"></div>
+				<h1>Artikel werden geladen.</h1>
+			</div>
+		</div>
+	</body>
+</html>

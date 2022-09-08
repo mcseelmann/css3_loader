@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				font-size: 14pt;
+				color: #555;
+				margin:0px;
+				position: absolute;
+				bottom: 0px;
+				width: 200px;
+				text-align: center;
+			}
+			.content{
+				width: 1024px;
+				height: 768px;
+				position: absolute;
+				left: 50%;
+				margin-left: -512px;
+				box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			}
+			/* Loader 1 */
+			.loader1{
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				height: 160px;
+				width: 200px;
+			}
+			.loader1 .point{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left:-15px; 
+				margin-top:-15px;
+				width: 30px;
+				height: 30px;
+				box-shadow:inset 0px 0px 5px #000;
+				-webkit-animation-name: loadBall1;
+				-webkit-animation-duration: 4s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: loadBall1;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes loadBall1{
+				0% { background: yellow; width: 30px; height: 30px; border-radius: 15px; }
+				25% { background: brown; width:80px; height: 80px; border-radius: 10px 70px 10px 70px; margin-left:-40px; margin-top:-40px; box-shadow:inset 0px 0px 10px #000;}
+				50% { background: brown; width:80px; height: 80px; border-radius: 40px; margin-left:-40px; margin-top:-40px; box-shadow:inset 0px 0px 10px #000;}
+				75% { background: white; width:80px; height: 80px; border-radius: 40px; margin-left:-40px; margin-top:-40px; box-shadow:inset 0px 0px 10px #000;}
+				100% { background: yellow; width: 30px; height: 30px; border-radius: 15px; margin-left:-15px;  margin-top:-15px; box-shadow:inset 0px 0px 5px #000;}
+			}
+
+			/* Loader 2 */
+			.loader2{
+				position: absolute;
+				left: 210px;
+				top: 0px;
+				height: 160px;
+				width: 200px;
+			}
+			.loader2 .stage{
+				width: 90px;
+				height: 90px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left:-45px;
+				margin-top: -45px;
+				overflow:hidden;
+				border-bottom: 2px solid brown;
+			}
+			.loader2 .point{
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				box-shadow:inset 0px 0px 5px #000;
+				background: yellow;
+				-webkit-animation-name: loadBall2;
+				-webkit-animation-duration: 500ms;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: loadBall2;
+				animation-duration: 500ms;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes loadBall2{
+				0% { left: -20px; top: 30px;}
+				50% { left: 35px; top: 63px;}
+				100% { left: 95px; top: 35px;}
+			}
+
+			/* Loader 3 */
+			.loader3{
+				position: absolute;
+				left: 420px;
+				top: 0px;
+				height: 160px;
+				width: 200px;
+			}
+			.loader3 .stage{
+				width: 120px;
+				height: 120px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left:-60px;
+				margin-top: -70px;
+				overflow:hidden;
+				border: 1px solid #CCC;
+			}
+			.loader3 .board{
+				position: absolute;
+				top: -80px;
+				left: -10px;
+				width: 120px;
+				height: 120px;
+				background: #EEE;
+				border: 10px solid black;
+				outline: 10px solid white;
+				outline-offset: -35px;
+				-webkit-animation-name: quake;
+				-webkit-animation-duration: 3s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: quake;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+			}
+			.loader3 .basket{
+				position: absolute;
+				top: 40px;
+				left: 50%;
+				margin-left: -38px;
+				width: 76px;
+				border-top: 7px solid orange;
+				z-index:1;
+				-webkit-animation-name: quake;
+				-webkit-animation-duration: 3s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: quake;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+			}
+			.loader3 .net{
+				position: absolute;
+				top: 47px;
+				left: 50%;
+				margin-left: -35px;
+				width: 70px;
+				z-index:1;
+				-webkit-animation-name: net;
+				-webkit-animation-duration: 3s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: net;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+			}
+			.loader3 .net td{
+				border:2px solid #CCC;
+				height: 10px;
+				transform: rotate(-45deg);
+			}
+			.loader3 .net td#nb{
+				border:none;
+			}
+			.loader3 .point{
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				left: -90px; 
+				top: 160px;
+				border-radius: 40px;
+				box-shadow:inset 0px 0px 10px #000;
+				background: brown;
+				z-index:2;
+				-webkit-animation-name: loadBall3;
+				-webkit-animation-duration: 3s;
+				-webkit-animation-iteration-count: infinite;
+				animation-name: loadBall3;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes loadBall3{
+				0% { left: -90px; top: 160px;}
+				33% { left: 30px; top: -20px; width: 50px; height:50px;}
+				66% { width: 57px; height:57px; z-index:0;}
+				99% { left: 50px; top: 160px; width: 65px; height:65px;}
+				100% {z-index:2; }
+			}
+			
+			@keyframes quake{
+				0% { margin-top: 0px; }
+				31% { margin-top: 0px;}
+				33% { margin-top: -1px; }
+				35% { margin-top: 0px; }
+				37% { margin-top: -1px; }
+				39% { margin-top: 0px; }
+				41% { margin-top: -1px; }
+				43% { margin-top: 0px; }
+				45% { margin-top: -1px; }
+				47% { margin-top: 0px; }
+				49% { margin-top: -1px; }
+				51% { margin-top: 0px; }
+			}
+			@keyframes net{
+				0% { top: 47px; }
+				31% { top: 47px; }
+				33% { top: 45px; }
+				35% { top: 47px; }
+				37% { top: 45px; }
+				39% { top: 47px; }
+				41% { top: 45px; }
+				43% { top: 47px; }
+				45% { top: 45px; }
+				47% { top: 47px; transform: skewX(0deg); margin-left: -35px;}
+				49% { top: 45px; }
+				51% { top: 47px; }
+				57% { transform: skewX(7deg); margin-left: -32px; }
+				67% { transform: skewX(-4deg); margin-left: -38px; }
+				77% { transform: skewX(3deg); margin-left: -33px; }
+				87% { transform: skewX(-2deg); margin-left: -37px; }
+				97% { transform: skewX(0deg); margin-left: -35px; }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="loader1">
+				<div class="point"></div>
+				<h1>Artikel werden geladen.</h1>
+			</div>
+			<div class="loader2">
+				<div class="stage"><div class="point"></div></div>
+				<h1>Artikel werden geladen.</h1>
+			</div>
+			<div class="loader3">
+				<div class="stage">
+					<div class="board"></div>
+					<div class="basket"></div>
+					<table class="net" cellspacing="0">
+					<tr><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td id="nb"></td><td></td><td></td><td></td><td id="nb"></td></tr></table>
+					<div class="point"></div>
+				</div>
+				<h1>Artikel werden geladen.</h1>
+			</div>
+		</div>
+	</body>
+</html>
